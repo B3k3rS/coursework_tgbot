@@ -4,6 +4,15 @@ const Paras = new Para();
 
 const TOKEN = `5744262434:AAG2aojYQd6f9tgjgDeo3ArodIVkW2V8fZg`;
 const bot = new TelegramBot(TOKEN, {polling: true});
+
+bot.setMyCommands([
+    {command: '/help', description: 'Вивести список всех команд'},
+    {command: '/now', description: 'Вивести проходящую пару'},
+    {command: '/tod', description: 'Вивести расписание пар на сегодня'},
+    {command: '/tom', description: 'Вивести расписание пар на завтра'},
+    {command: '/author', description: 'Вивести информацию о авторе'},
+])
+
  
 bot.on('message', (msg) => {
     const ChatID = msg.chat.id;
